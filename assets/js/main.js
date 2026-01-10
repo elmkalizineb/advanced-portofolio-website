@@ -31,8 +31,26 @@ gsap.utils.toArray(".text-gradient").forEach(span=> {
 /*==================== DARK LIGHT THEME ====================*/
 
 /*==================== MIXITUP FILTER PORTFOLIO ====================*/
+var mixer = mixitup('.work-container', {
+    selectors: {
+        target: '.mix'
+    },
+    animation: {
+        duration: 300
+    }
+});
 
 /* Active work */
+const linkWork = document.querySelectorAll(".work-item");
+
+function activeWork(){
+    linkWork.forEach((a) =>{
+        a.classList.remove('active-work');
+    });
+
+    this.classList.add('active-work');
+}
+linkWork.forEach((a)=> a.addEventListener('click' , activeWork));
 
 /*==================== EMAIL JS ====================*/
 
