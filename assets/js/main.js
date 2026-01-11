@@ -71,10 +71,9 @@ const sendEmail = (e) => {
             message.textContent = '';
         }, 3000);
     } else {
-        emailjs.sendForm('service_52w1gk8',
-            'template_my6j50c',
-            '#contact-form',
-            'AA1X-c0rA6tZDaTSz').then(
+        emailjs.sendForm('service_id',
+            'template_id',
+            '#contact-form').then(
                 () => {
                     message.textContent = 'Message sent  👌 ';
 
@@ -86,9 +85,9 @@ const sendEmail = (e) => {
                     alert('OOPs ! Something went Wrong ... ', error);
                 },
             );
-        contactName.value='';
-        contactEmail.value='';
-        contactMessage.value='';
+        contactName.value = '';
+        contactEmail.value = '';
+        contactMessage.value = '';
 
     }
 };
