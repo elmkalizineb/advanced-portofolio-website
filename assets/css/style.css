@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
 
 :root {
   --first-hue: 260;
@@ -49,7 +48,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 body,
@@ -90,6 +89,27 @@ textarea {
 img {
   display: block;
   max-width: 100%;
+}
+/* Variables Dark theme  */
+.light-theme {
+  --title-color: hsl(var(--first-hue), 8%, 16%);
+  --text-color: hsl(var(--first-hue), 8%, 28%);
+  --body-color: hsl(var(--first-hue), 8%, 99%);
+  --container-color: hsl(var(--second-hue), 8%, 95%);
+
+  --first-gradient: linear-gradient(
+    150deg,
+    var(--first-color-dark) 0%,
+    var(--first-color) 100%
+  );
+}
+/* Color changes in some parts of the website ,
+ in light theme  */
+.light-theme .scroll-header {
+  box-shadow: 0 4px 4px hsla(var(--first-hue), 0%, 4%, 0.1);
+}
+.light-theme .text-gradient{
+  -webkit-text-fill-color: hsla(var(--second-hue), 92%, 15%, 0.2);
 }
 /* REUSABLE  CSS CLASSES  */
 .section {
@@ -172,6 +192,7 @@ img {
 }
 .change-theme {
   font-size: 1.25rem;
+  cursor: pointer;
 }
 .nav-btns {
   align-items: center;
@@ -182,16 +203,14 @@ img {
   display: none;
 }
 /* ---Active link ---- */
-.active-link{
+.active-link {
   color: var(--first-color);
 }
 /* ------ Change background header------ */
-.scroll-header{
+.scroll-header {
   background-color: var(--body-color);
   box-shadow: 0 4px 4px hsla(var(--first-hue), 0%, 4%, 0.2);
 }
-
-
 /* ------Home-------  */
 .home-container {
   grid-template-columns: 1fr repeat(2, max-content);
@@ -496,32 +515,31 @@ img {
 }
 
 /* Contact */
-.contact{
+.contact {
   padding-bottom: 8rem;
 }
 
-.contact-container{
+.contact-container {
   grid-template-columns: 5.5fr 6.5fr;
   column-gap: 2rem;
 }
 
-.contact-section-title{
+.contact-section-title {
   text-align: left;
-
 }
 
-.contact-data{
+.contact-data {
   row-gap: 2rem;
 }
 
-.contact-item{
+.contact-item {
   display: grid;
   grid-template-columns: max-content 1fr;
   align-items: center;
   column-gap: 1.5rem;
 }
 
-.contact-icon{
+.contact-icon {
   width: 68px;
   aspect-ratio: 1/1;
   background: var(--second-gradient);
@@ -532,108 +550,74 @@ img {
   font-size: 2rem;
 }
 
-.contact-title{
+.contact-title {
   font-size: var(--larger-font-size);
   margin-bottom: 0.25rem;
 }
 
-.contact-form{
+.contact-form {
   row-gap: 3rem;
   margin-top: 1rem;
   position: relative;
 }
-.contact-form-div{
+.contact-form-div {
   display: grid;
   row-gap: 0.75rem;
 }
 
-.contact-label{
+.contact-label {
   color: var(--title-color);
   font-size: var(--large-font-size);
   font-weight: var(--font-semi-bold);
 }
-.contact-input{
+.contact-input {
   color: var(--title-color);
-  border-bottom: 3px solid var(--title-color) ;
-  padding-inline:.25rem ;
+  border-bottom: 3px solid var(--title-color);
+  padding-inline: 0.25rem;
   height: 50px;
 }
 
-.contact-area{
+.contact-area {
   resize: none;
   height: 200px;
 }
 
-.contact-button{
+.contact-button {
   justify-self: start;
   margin-top: 1rem;
 }
 
-.contact-message{
+.contact-message {
   position: absolute;
   bottom: 5.5rem;
 }
 
 /* Footer */
-.footer{
+.footer {
   background-color: var(--container-color);
-  padding-block:2rem;
+  padding-block: 2rem;
 }
 
-.footer-container{
+.footer-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.footer-social{
+.footer-social {
   display: flex;
   column-gap: 1rem;
 }
-.footer-link{
+.footer-link {
   color: var(--title-color);
   font-size: var(--larger-font-size);
   transition: color 0.3s;
 }
-.footer-link:hover{
+.footer-link:hover {
   color: var(--first-color);
 }
-.footer-copyright{
+.footer-copyright {
   font-weight: var(--font-semi-bold);
 }
-.footer-copyright span{
+.footer-copyright span {
   color: var(--first-color);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

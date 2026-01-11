@@ -26,19 +26,19 @@ const scrollActive = () => {
 
     sections.forEach((current) => {
         const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop-58,
+            sectionTop = current.offsetTop - 58,
             sectionId = current.getAttribute('id'),
             sectionClass = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
 
-            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-                sectionClass.classList.add('active-link');
-            }else{
-                 sectionClass.classList.remove('active-link');
-            }
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            sectionClass.classList.add('active-link');
+        } else {
+            sectionClass.classList.remove('active-link');
+        }
     });
 };
 
-window.addEventListener('scroll',scrollActive);
+window.addEventListener('scroll', scrollActive);
 
 
 /*==================== SCROLL ABOUT ANIMATION ====================*/
@@ -57,69 +57,108 @@ gsap.utils.toArray(".text-gradient").forEach(span => {
 });
 
 /*==================== DARK LIGHT THEME ====================*/
+window.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById("theme-toggle");
 
-/*==================== MIXITUP FILTER PORTFOLIO ====================*/
-var mixer = mixitup('.work-container', {
-    selectors: {
-        target: '.mix'
-    },
-    animation: {
-        duration: 300
+    function applyTheme(theme) {
+        if (theme == 'light' ){
+            document.body.classList.add('light-theme');
+            toggleBtn.classList.remove('ri-sun-line');
+            toggleBtn.classList.add('ri-moon-line');
+        }else{
+            // console.log('dark');
+            document.body.classList.remove('light-theme');
+            toggleBtn.classList.add('ri-sun-line');
+            toggleBtn.classList.remove('ri-moon-line');
+        }
+
+        localStorage.setItem('theme',theme);
     }
+
+    const savedTheme=localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    toggleBtn.addEventListener('click', () => {
+        const isLight = document.body.classList.contains('light-theme');
+        applyTheme(isLight ? 'dark' : 'light');
+
+    });
 });
-
-/* Active work */
-const linkWork = document.querySelectorAll(".work-item");
-
-function activeWork() {
-    linkWork.forEach((a) => {
-        a.classList.remove('active-work');
+    /*==================== MIXITUP FILTER PORTFOLIO ====================*/
+    var mixer = mixitup('.work-container', {
+        selectors: {
+            target: '.mix'
+        },
+        animation: {
+            duration: 300
+        }
     });
 
-    this.classList.add('active-work');
-}
-linkWork.forEach((a) => a.addEventListener('click', activeWork));
+    /* Active work */
+    const linkWork = document.querySelectorAll(".work-item");
 
-/*==================== EMAIL JS ====================*/
-const contactForm = document.getElementById('contact-form'),
-    contactName = document.getElementById('contact-name'),
-    contactEmail = document.getElementById('contact-email'),
-    contactMessage = document.getElementById('contact-message'),
-    message = document.getElementById('message');
+    function activeWork() {
+        linkWork.forEach((a) => {
+            a.classList.remove('active-work');
+        });
 
-const sendEmail = (e) => {
-    e.preventDefault();
-
-    if (contactName.value === ''
-        || contactEmail === ''
-        || contactMessage === '') {
-        message.textContent = 'Write all the input feilds ';
-
-        setTimeout(() => {
-            message.textContent = '';
-        }, 3000);
-    } else {
-        emailjs.sendForm('service_id',
-            'template_id',
-            '#contact-form').then(
-                () => {
-                    message.textContent = 'Message sent  👌 ';
-
-                    setTimeout(() => {
-                        message.textContent = '';
-                    }, 5000);
-                },
-                (error) => {
-                    alert('OOPs ! Something went Wrong ... ', error);
-                },
-            );
-        contactName.value = '';
-        contactEmail.value = '';
-        contactMessage.value = '';
-
+        this.classList.add('active-work');
     }
-};
+    linkWork.forEach((a) => a.addEventListener('click', activeWork));
 
-contactForm.addEventListener('submit', sendEmail);
+    /*==================== EMAIL JS ====================*/
+    const contactForm = document.getElementById('contact-form'),
+        contactName = document.getElementById('contact-name'),
+        contactEmail = document.getElementById('contact-email'),
+        contactMessage = document.getElementById('contact-message'),
+        message = document.getElementById('message');
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        if (contactName.value === ''
+            || contactEmail === ''
+            || contactMessage === '') {
+            message.textContent = 'Write all the input feilds ';
+
+            setTimeout(() => {
+                message.textContent = '';
+            }, 3000);
+        } else {
+            emailjs.sendForm('service_id',
+                'template_id',
+                '#contact-form').then(
+                    () => {
+                        message.textContent = 'Message sent  👌 ';
+
+                        setTimeout(() => {
+                            message.textContent = '';
+                        }, 5000);
+                    },
+                    (error) => {
+                        alert('OOPs ! Something went Wrong ... ', error);
+                    },
+                );
+            contactName.value = '';
+            contactEmail.value = '';
+            contactMessage.value = '';
+
+        }
+    };
+
+    contactForm.addEventListener('submit', sendEmail);
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
+const sr = ScrollReveal({
+    origin:'top',
+    distance:'60px',
+    duration:2500,
+    delay:400,
+});
+
+sr.reveal(`.home-data`);
+sr.reveal(`.home-img-wrapper`,{delay:500});
+sr.reveal(`.home-social`,{delay:600}); 
+sr.reveal(`.services-card ,.mix`,{interval:100}); 
+sr.reveal(`.skills-developer ,.resume-left , .contact-group`,{origin:'left'});
+sr.reveal(`.skills-designer , .resume-right ,.contact-form`,{origin:'right'});

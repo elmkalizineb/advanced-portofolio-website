@@ -46,7 +46,7 @@
         </div>
 
         <div class="nav-btns">
-          <i class="ri-sun-line change-theme"></i>
+          <i class="ri-sun-line change-theme" id="theme-toggle"></i>
 
           <div class="nav-toggle">
             <i class="ri-menu-line"></i>
@@ -166,7 +166,7 @@
         <h2 class="section-title">My Skills</h2>
 
         <div class="skills-container container grid">
-          <div class="skills-group">
+          <div class="skills-group skills-developer">
             <h3 class="skills-title">Frontend Developer</h3>
             <div class="skills-items grid">
               <div class="skills-data">
@@ -215,7 +215,7 @@
               </div>
             </div>
           </div>
-          <div class="skills-group">
+          <div class="skills-group skills-designer">
             <h3 class="skills-title">Web Designer</h3>
             <div class="skills-items grid">
               <div class="skills-data">
@@ -267,7 +267,7 @@
         </div>
       </section>
       <!-- Resume -->
-      <section class="resume section" >
+      <section class="resume section">
         <h2 class="section-title">My Journey</h2>
 
         <div class="resume-container container grid">
@@ -458,12 +458,22 @@
           <form class="contact-form grid" id="contact-form">
             <div class="contact-form-div">
               <label for="" class="contact-label">Name</label>
-              <input type="text" name="name" class="contact-input" id="contact-name"/>
+              <input
+                type="text"
+                name="name"
+                class="contact-input"
+                id="contact-name"
+              />
             </div>
 
             <div class="contact-form-div">
               <label for="" class="contact-label"></label>
-              <input type="email" class="contact-input" name="email" id="contact-email" />
+              <input
+                type="email"
+                class="contact-input"
+                name="email"
+                id="contact-email"
+              />
             </div>
 
             <div class="contact-form-div">
@@ -486,25 +496,27 @@
     </main>
 
     <!-- Footer -->
-     <footer class="footer">
+    <footer class="footer">
       <div class="footer-container container">
-        <div class="footer-social ">
-            <a href="#" target="_blank" class="footer-link">
-              <i class="ri-linkedin-fill"></i>
-            </a>
-            <a href="#" target="_blank" class="footer-link">
-              <i class="ri-instagram-line"></i>
-            </a>
-            <a href="#" target="_blank" class="footer-link">
-              <i class="ri-github-fill"></i>
-            </a>
+        <div class="footer-social">
+          <a href="#" target="_blank" class="footer-link">
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a href="#" target="_blank" class="footer-link">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" target="_blank" class="footer-link">
+            <i class="ri-github-fill"></i>
+          </a>
         </div>
 
-        <p class="footer-copyright">© 2026 <span>Zineb</span> All Rights Reserved</p>
+        <p class="footer-copyright">
+          © 2026 <span>Zineb</span> All Rights Reserved
+        </p>
 
-        <p class="footer-copyright">Developed by <span>Zineb</span>  </p>
+        <p class="footer-copyright">Developed by <span>Zineb</span></p>
       </div>
-     </footer>
+    </footer>
 
     <!-- GSAP -->
 
@@ -516,13 +528,19 @@
       type="module"
       src="https://cdn.jsdelivr.net/gh/lekoala/formidable-elements@master/dist/count-up.min.js"
     ></script>
+
     <!-- Mixiup  -->
     <script src="assets/js/mixitup.min.js"></script>
+
     <!-- Email Js -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
+
+    <!-- Scroll Reveal  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <!--  JS  -->
     <script src="assets/js/main.js"></script>
   </body>
