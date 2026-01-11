@@ -49,6 +49,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 body,
 button,
 input,
@@ -178,6 +181,16 @@ img {
 .nav-toggle {
   display: none;
 }
+/* ---Active link ---- */
+.active-link{
+  color: var(--first-color);
+}
+/* ------ Change background header------ */
+.scroll-header{
+  background-color: var(--body-color);
+  box-shadow: 0 4px 4px hsla(var(--first-hue), 0%, 4%, 0.2);
+}
+
 
 /* ------Home-------  */
 .home-container {
