@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    
     <!-- Remix Icon  -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
@@ -330,10 +329,10 @@
         <h2 class="section-title">Portofolio</h2>
         <div class="container">
           <ul class="work-list">
-            <li class="work-item active-work"  data-filter="all">All</li>
+            <li class="work-item active-work" data-filter="all">All</li>
             <li class="work-item" data-filter=".photography">Photography</li>
-            <li class="work-item"  data-filter=".developement">Developement</li>
-            <li class="work-item"  data-filter=".branding">Banding</li>
+            <li class="work-item" data-filter=".developement">Developement</li>
+            <li class="work-item" data-filter=".branding">Banding</li>
           </ul>
         </div>
         <div class="work-container grid">
@@ -415,9 +414,75 @@
         </div>
       </section>
       <!-- Contact  -->
-       <section class="contact section" id="contact">
-        
-       </section>
+      <section class="contact section" id="contact">
+        <div class="contact-container container grid">
+          <div class="contact-group">
+            <h2 class="contact-section-title section-title">
+              Let's Talk About <br />
+              Your Project
+            </h2>
+            <div class="contact-data grid">
+              <div class="contact-item">
+                <span class="contact-icon">
+                  <i class="ri-mail-open-fill"></i
+                ></span>
+
+                <div>
+                  <h3 class="contact-title">E-mail</h3>
+                  <p class="contact-description">hello@domain.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon">
+                  <i class="ri-map-pin-fill"></i>
+                </span>
+
+                <div>
+                  <h3 class="contact-title">Location</h3>
+                  <p class="contact-description">
+                    54 rue beausejour Rais Hamidou
+                  </p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon"> <i class="ri-phone-fill"></i></span>
+
+                <div>
+                  <h3 class="contact-title">Phone</h3>
+                  <p class="contact-description">079102585</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form grid" id="contact-form">
+            <div class="contact-form-div">
+              <label for="" class="contact-label">Name</label>
+              <input type="text" name="name" class="contact-input" id="contact-name"/>
+            </div>
+
+            <div class="contact-form-div">
+              <label for="" class="contact-label"></label>
+              <input type="email" class="contact-input" name="email" id="contact-email" />
+            </div>
+
+            <div class="contact-form-div">
+              <label for="" class="contact-label">Message</label>
+              <textarea
+                name="message"
+                class="contact-input contact-area"
+                id="contact-message"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="button contact-button">
+              Send Message
+            </button>
+
+            <p class="contact-message" id="message"></p>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!-- GSAP -->
@@ -432,6 +497,11 @@
     ></script>
     <!-- Mixiup  -->
     <script src="assets/js/mixitup.min.js"></script>
+    <!-- Email Js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <!--  JS  -->
     <script src="assets/js/main.js"></script>
   </body>
